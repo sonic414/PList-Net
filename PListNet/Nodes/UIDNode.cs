@@ -7,14 +7,14 @@ using System.Text;
 
 namespace PListNet.Nodes
 {
-    using System.Collections.Generic;
+	using System.Collections.Generic;
 
-    /// <summary>
-    /// Represents an string Value from a PList 
-    /// </summary>
-    public class UIDNode : PNode<byte[]>
-    {
 	/// <summary>
+	/// Represents an uid Value from a PList 
+	/// </summary>
+	public class UIDNode : PNode<byte[]>
+	{
+		/// <summary>
 		/// Gets the Xml tag of this element.
 		/// </summary>
 		/// <value>The Xml tag of this element.</value>
@@ -24,7 +24,7 @@ namespace PListNet.Nodes
 		/// Gets the binary typecode of this element.
 		/// </summary>
 		/// <value>The binary typecode of this element.</value>
-        internal override byte BinaryTag { get { return (byte)0x8; } }
+		internal override byte BinaryTag { get { return (byte) 0x8; } }
 
 		/// <summary>
 		/// Gets the length of this PList element.
@@ -32,17 +32,17 @@ namespace PListNet.Nodes
 		internal override int BinaryLength { get { return Value.Length; } }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DataNode"/> class.
+		/// Initializes a new instance of the <see cref="UIDNode"/> class.
 		/// </summary>
 		public UIDNode()
 		{
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DataNode"/> class.
+		/// Initializes a new instance of the <see cref="UIDNode"/> class.
 		/// </summary>
 		/// <param name="value">The value of this element.</param>
-        public UIDNode(byte[] value)
+		public UIDNode(byte[] value)
 		{
 			Value = value;
 		}
@@ -64,16 +64,16 @@ namespace PListNet.Nodes
 		/// </returns>
 		internal override string ToXmlString()
 		{
-            StringBuilder bb = new StringBuilder(Value.Length * 2);
-            for (int i = 0; i < Value.Length; i++)
-            {
-                byte b = Value[i];
-                if (b < 16)
-                    bb.Append('0');
-                bb.Append(String.Format("{0:x2}", b));
-            }
+			StringBuilder bb = new StringBuilder(Value.Length * 2);
+			for (int i = 0; i < Value.Length; i++)
+			{
+				byte b = Value[i];
+				if (b < 16)
+					bb.Append('0');
+				bb.Append(String.Format("{0:x2}", b));
+			}
 
-            return bb.ToString();
+			return bb.ToString();
 		}
 
 		/// <summary>
@@ -95,6 +95,6 @@ namespace PListNet.Nodes
 		{
 			stream.Write(Value, 0, Value.Length);
 		}
-    }
+	}
 }
 

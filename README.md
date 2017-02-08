@@ -2,6 +2,9 @@
 Changelog:
 + Added PList UID Type 0x8 
 
+TODO:
++ Write tests to check UID works as intended
+
 # PList-Net
 
 ## Summary

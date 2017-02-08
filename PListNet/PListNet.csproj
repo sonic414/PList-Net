@@ -59,6 +59,7 @@
     <Compile Include="Internal\BinaryFormatReader.cs" />
     <Compile Include="Internal\BinaryFormatWriter.cs" />
     <Compile Include="Internal\EndianConverter.cs" />
+    <Compile Include="Nodes\UIDNode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
